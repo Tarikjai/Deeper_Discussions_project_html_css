@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deeper discussions project</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <section>
 <header>
@@ -24,15 +26,16 @@
     <section> 
         <div class="container">
             <p>Que vous souhaitiez briser la glace lors d’une réunion, engager une conversation intéressante avec des amis, ou simplement trouver les mots justes pour commencer un échange, nos suggestions vous fourniront l’inspiration nécessaire. <br>Explorez nos exemples et découvrez comment transformer chaque interaction en un moment mémorable et engageant</p>
-            <div>
+            <div class="dropdown">
                 <label for="context">Choisis le context:</label>
                 <select name="selection" id="selection">
                   <option value="amoureux" id="amoureux">Rendez-vous amoureux</option>
                   <option value="professionel">Rendez-vous professionel</option>
-                  <option value="Amical">Rendez-vous Amical</option>
-                  <option value="Familiale">Rendez-vous Familiale</option>
+                 <!-- Ceci est un commentaire en HTML  <option value="Amical">Rendez-vous Amical</option>
+                  <option value="Familiale">Rendez-vous Familiale</option>-->
                 </select>
             </div>
+            <button type="button" id="refresh" class="refresh"   >Rafraichir</button>
             <div class="question" >
                     <p id="question" ></p>
             </div>

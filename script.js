@@ -23,26 +23,24 @@ const rdvPro = [
   "Quelles sont les opportunités de croissance ou d'avancement dans ce poste ?",
   "Comment gérez-vous les feedbacks et les performances dans votre équipe ?"
 ];
-  
 
 
-  const selection = document.getElementById('selection')
-  const question = document.getElementById('question')
+const selection = document.getElementById('selection');
+const question = document.getElementById('question');
+const refresh = document.getElementById('refresh');
 
+function updateQuestion() {
+  const randomAmoureux = rdvAmoureux[Math.floor(Math.random() * rdvAmoureux.length)];
+  const randomPro = rdvPro[Math.floor(Math.random() * rdvPro.length)];
+  const selectedValue = selection.value;
 
-  selection.addEventListener("change", function() {
-      
-    const randomAmoureux = rdvAmoureux[Math.floor(Math.random() * rdvAmoureux.length)];
+  if (selectedValue === 'amoureux') {
+    question.innerText = randomAmoureux;
+  } else if (selectedValue === 'professionel') {
+    question.innerText = randomPro;
+  }
+}
 
-    const randomPro = rdvPro[Math.floor(Math.random() * rdvPro.length)];
-
-    const selectedValue =  selection.value ;
-    if (selectedValue ===  'amoureux') {
-      question.innerText = randomAmoureux;
-    } else if  (selectedValue ===  'professionel') {
-      question.innerText = randomPro
-    }
-      
-    
-  });
-
+selection.addEventListener("change", updateQuestion);
+refresh.addEventListener("click", updateQuestion);
+updateQuestion();
